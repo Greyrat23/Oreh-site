@@ -1,0 +1,333 @@
+{% extends "base.html" %}
+
+{% macro check(color) -%}
+<svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="{{ color }}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+{%- endmacro %}
+
+{% block content %}
+
+<!-- Главный экран -->
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <div class="hero-uni">
+        <img src="{{ url_for('static', filename='img/svfu-logo.png') }}" alt="Логотип СВФУ" width="56" height="56">
+        <span>Северо-Восточный<br>федеральный университет</span>
+      </div>
+      <h1 class="display">
+        Центр<br class="br-wide"> техноло&shy;гического<br class="br-wide"> предпринима&shy;тельства <span class="gradient-text">«Орех»</span>
+      </h1>
+      <p class="lead">
+        Развиваем технологическое предпринимательство в Якутии и готовим конкурентоспособные
+        команды: рабочее место в IT Park Yakutsk, менторы, гранты и путь от идеи до компании.
+      </p>
+      <p class="hero-note">Арктический инновационный центр СВФУ · {{ residents|length }} действующих резидентов</p>
+      <div class="hero-actions">
+        <a href="#apply" class="btn btn-primary">Подать заявку
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>
+        </a>
+        <a href="#steps" class="link-underline">Как это работает</a>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <div class="hero-photo-frame" aria-hidden="true"></div>
+      <img src="{{ url_for('static', filename='img/itpark-deck.png') }}" alt="Здание IT Park Yakutsk">
+      <figcaption>IT Park Yakutsk · наша площадка</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- О нас -->
+<section id="about" class="section section-mist">
+  <div class="container narrow">
+    <h2 class="display section-title center">О нас</h2>
+    <div class="grid-2">
+      <div class="card">
+        <p class="eyebrow green">Цель</p>
+        <p class="card-lead">Содействие развитию технологического предпринимательства и адаптация резидентов к условиям реального рынка труда.</p>
+      </div>
+      <div class="card">
+        <p class="eyebrow blue">Миссия</p>
+        <p class="card-lead">Поддержка технологического предпринимательства и помощь в профессиональном росте резидентов для подготовки конкурентоспособных компаний и востребованных специалистов на рынке России и мира.</p>
+      </div>
+    </div>
+    <div class="card tasks">
+      <p class="eyebrow yellow">Основные задачи</p>
+      <ul class="dot-list">
+        <li><span class="dot" style="background:#F0B400"></span>Подготовка, помощь, поддержка и обучение созданию востребованных технологических проектов и компаний.</li>
+        <li><span class="dot" style="background:#8CC63F"></span>Проведение специализированных мероприятий и образовательных программ для повышения конкурентоспособности резидентов и приобретения ими практико-ориентированных предпринимательских навыков и компетенций.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Достижения -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow green">Достижения</p>
+    <h2 class="display section-title">Нас признают в России и в мире</h2>
+    <div class="grid-3">
+      <article class="card award">
+        <div class="award-icon" style="background:rgba(41,171,226,.1)">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#29ABE2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21c4-1 6-4 6-9V4"/><path d="M18 21c-4-1-6-4-6-9"/><path d="M6 21c0-3-1.5-5-3-6 2.5-.5 4.5.5 5.5 2"/><path d="M18 21c0-3 1.5-5 3-6-2.5-.5-4.5.5-5.5 2"/><path d="M12 4l-2 2m2-2l2 2"/></svg>
+        </div>
+        <h3 class="display award-title" style="color:#29ABE2">Лучший</h3>
+        <p>студенческий бизнес-инкубатор в России в 2016 году по версии ФИБИ МГИМО</p>
+      </article>
+      <article class="card award">
+        <div class="award-icon" style="background:rgba(57,181,74,.1)">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#39B54A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><circle cx="12" cy="9" r="2.6"/><path d="M8.5 14.5 6 21l3-1.5L11 21l-1-4.5"/><path d="M15.5 14.5 18 21l-3-1.5L13 21l1-4.5"/></svg>
+        </div>
+        <h3 class="display award-title" style="color:#39B54A">ТОП-10</h3>
+        <p>инкубаторов России в 2017 году по версии РБК</p>
+      </article>
+      <article class="card award">
+        <div class="award-icon" style="background:rgba(255,201,19,.14)">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F0B400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l1.8 1.4 2.2-.4 1 2 2.2.6-.1 2.3 1.6 1.6-1.6 1.6.1 2.3-2.2.6-1 2-2.2-.4L12 17.5l-1.8-1.4-2.2.4-1-2-2.2-.6.1-2.3L3.3 10l1.6-1.6-.1-2.3 2.2-.6 1-2 2.2.4z"/><path d="M9.5 10l1.8 1.8L15 8.2"/><path d="M9 17.5V22l3-1.6L15 22v-4.5"/></svg>
+        </div>
+        <h3 class="display award-title" style="color:#E0A800">ТОП-180</h3>
+        <p>мирового рейтинга бизнес-инкубаторов и акселераторов в 2019–2020 гг. по версии UBI GLOBAL</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Услуги -->
+<section id="benefits" class="section section-mist">
+  <div class="container">
+    <h2 class="display section-title">Услуги центра</h2>
+    {% set services = [
+      ("#F0B400", "Рабочее место", "Предоставление рабочего места для команды проекта в IT Park Yakutsk.", '<path d="M12 21s-6.5-5.1-6.5-10a6.5 6.5 0 0 1 13 0c0 4.9-6.5 10-6.5 10z"/><circle cx="12" cy="10.5" r="2.5"/>'),
+      ("#8CC63F", "Конкурсы и гранты", "Информирование о проводимых конкурсах и грантах, помощь с подачей заявок.", '<rect x="3.5" y="5" width="17" height="13" rx="2"/><path d="M3.5 9h17"/><circle cx="15.5" cy="13.5" r="2"/>'),
+      ("#39B54A", "Упаковка проекта", "Обучение упаковке проекта: от идеи до презентации для инвесторов.", '<rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M9 8h6M9 11.5h6M9 15h3.5"/>'),
+      ("#2AA198", "Менторская поддержка", "Опытные наставники и эксперты сопровождают проект на каждом этапе.", '<circle cx="9" cy="8" r="3"/><path d="M4 20c0-3 2.2-5 5-5s5 2 5 5"/><path d="M16 4.5c2 .5 3.5 2.2 3.5 4.5 0 1.4-.6 2.7-1.5 3.5"/>'),
+      ("#29ABE2", "Коворкинг-площадка и опен-спейс", "Открытая коворкинг-площадка и опен-спейс для работы, встреч и мероприятий.", '<path d="M4 19.5h16"/><rect x="6" y="11" width="5" height="8.5" rx="1"/><rect x="13" y="7" width="5" height="12.5" rx="1"/>'),
+    ] %}
+    <ol class="timeline">
+      {% for color, title, text, icon in services %}
+      <li style="--c: {{ color }}; --next: {{ services[loop.index0 + 1][0] if not loop.last else color }}">
+        <span class="timeline-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="{{ color }}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ icon|safe }}</svg>
+        </span>
+        <div class="card timeline-card">
+          <h3>{{ title }}</h3>
+          <p>{{ text }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<!-- Резиденты -->
+<section id="residents" class="section">
+  <div class="container">
+    <p class="eyebrow blue">Резиденты</p>
+    <h2 class="display section-title">Проекты, которые растут в «Орехе»</h2>
+    <p class="section-lead">Выберите проект, чтобы посмотреть его достижения, стадию готовности и контакты.</p>
+
+    <div class="resident-grid" role="tablist" aria-label="Резиденты">
+      {% for r in residents %}
+      <button type="button" class="card resident-card{% if loop.first %} is-active{% endif %}" role="tab"
+              id="tab-{{ r.id }}" aria-controls="panel-{{ r.id }}" aria-selected="{{ 'true' if loop.first else 'false' }}"
+              data-resident="{{ r.id }}" style="--accent: {{ r.accent }}">
+        <span class="logo-tile logo-sm" style="background: {{ r.logoBg }}">
+          {% if r.logo %}<img src="{{ url_for('static', filename=r.logo) }}" alt="" loading="lazy">
+          {% else %}<span class="logo-initial">{{ r.initial }}</span>{% endif %}
+        </span>
+        <span class="resident-name">
+          <strong>{{ r.name }}</strong>
+          <span style="color: {{ r.accent }}">{{ r.tag }}</span>
+        </span>
+      </button>
+      {% endfor %}
+    </div>
+
+    {% for r in residents %}
+    <article class="resident-panel" id="panel-{{ r.id }}" role="tabpanel" aria-labelledby="tab-{{ r.id }}"
+             {% if not loop.first %}hidden{% endif %} style="--accent: {{ r.accent }}">
+      <div class="resident-panel-bar"></div>
+      <div class="resident-panel-body">
+        <div class="resident-head">
+          <span class="logo-tile logo-lg" style="background: {{ r.logoBg }}">
+            {% if r.logo %}<img src="{{ url_for('static', filename=r.logo) }}" alt="Логотип проекта {{ r.name }}" loading="lazy">
+            {% else %}<span class="logo-initial">{{ r.initial }}</span>{% endif %}
+          </span>
+          <div>
+            <span class="pill" style="background: {{ r.accent }}">{{ r.tag }}</span>
+            <h3 class="display resident-title">{{ r.name }}</h3>
+            <p class="muted">{{ r.summary }}</p>
+          </div>
+        </div>
+        <div class="grid-2 resident-cols">
+          <div>
+            <h4 class="label">Достижения</h4>
+            <ul class="check-list">
+              {% for a in r.achievements %}<li>{{ check(r.accent) }}<span>{{ a }}</span></li>{% endfor %}
+            </ul>
+          </div>
+          <div class="resident-side">
+            {% if r.facts %}
+            <div>
+              <h4 class="label">О проекте</h4>
+              <ul class="dot-list small">
+                {% for f in r.facts %}<li><span class="dot" style="background: {{ r.accent }}"></span>{{ f }}</li>{% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+            <div class="stage-box">
+              <p><strong>Стадия готовности</strong></p>
+              <p class="muted">{{ r.stage }}</p>
+              {% if r.legal %}<p class="muted"><strong>Юридическое лицо:</strong> {{ r.legal }}</p>{% endif %}
+            </div>
+            {% if r.links %}
+            <div>
+              <h4 class="label">Контакты</h4>
+              <p class="link-row">
+                {% for l in r.links %}
+                <a href="{{ l.href }}"{% if l.href.startswith('http') %} target="_blank" rel="noopener"{% endif %}>{{ l.label }}</a>
+                {% endfor %}
+              </p>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Локация -->
+<section id="location" class="section section-mist">
+  <div class="container">
+    <h2 class="display section-title">Локация</h2>
+    <p class="section-lead">Центр работает на двух площадках: технопарк IT Park Yakutsk и главный учебный корпус СВФУ.</p>
+    <div class="grid-2">
+      <figure class="card place">
+        <img src="{{ url_for('static', filename='img/itpark-deck.png') }}" alt="Здание IT Park Yakutsk" loading="lazy">
+        <figcaption>
+          <h3 class="display">IT Park Yakutsk</h3>
+          <p class="muted">Рабочие места резидентов, коворкинг и опен-спейс, площадка для мероприятий.</p>
+        </figcaption>
+      </figure>
+      <figure class="card place">
+        <img src="{{ url_for('static', filename='img/svfu-building.png') }}" alt="Главный корпус СВФУ" loading="lazy">
+        <figcaption>
+          <h3 class="display">Главный корпус СВФУ</h3>
+          <p class="muted">г. Якутск, ул. Белинского 58: встречи с экспертами, защиты и образовательные программы.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Как стать резидентом -->
+<section id="steps" class="section">
+  <div class="container">
+    <p class="eyebrow yellow-dark">Отбор</p>
+    <h2 class="display section-title">Как стать резидентом? <span class="green-text">Круглогодично</span></h2>
+    <p class="section-lead wide">
+      <strong class="blue-text">Резиденты</strong> - это лучшие проекты, попавшие к нам в результате отбора.
+      Отбор в Инкубатор происходит несколько раз в год, а набор заявок на очередной отбор продолжается круглогодично.
+    </p>
+    {% set steps = [
+      ("1", "#FFC913", "#C08F00", "Заочная заявка", ["Заполнение заявки на сайте", "Загрузка презентации вашего проекта"]),
+      ("2", "#39B54A", "#2E8B3C", "Очная встреча", ["Встреча с экспертом бизнес-инкубатора", "Знакомство с будущим резидентом", "Заинтересованность двух сторон"]),
+      ("3", "#29ABE2", "#1D7FA8", "Очная презентация", ["5-минутное выступление", "Экспертиза вашего будущего проекта"]),
+    ] %}
+    <div class="grid-3 steps">
+      {% for n, bg, fg, title, points in steps %}
+      <article class="card step step-{{ n }}" style="border-top-color: {{ bg }}">
+        <span class="display step-num" style="color: {{ bg }}">{{ n }}</span>
+        <h3 class="display" style="color: {{ fg }}">{{ title }}</h3>
+        <ul class="check-list">
+          {% for p in points %}<li>{{ check(bg) }}<span>{{ p }}</span></li>{% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Заявка -->
+<section id="apply" class="section apply">
+  <div class="container narrow-form">
+    <h2 class="display section-title center white">Подайте заявку прямо сейчас</h2>
+    <p class="center white-soft">Заполните форму, и команда инкубатора свяжется с вами, чтобы назначить очную встречу.</p>
+
+    {% set flashes = get_flashed_messages(with_categories=true) %}
+    {% set sent = flashes and flashes[0][0] == 'success' and not errors %}
+    {% for category, m in flashes if category == 'error' %}
+    <p class="form-alert">{{ m }}</p>
+    {% endfor %}
+    {% if sent %}
+    <div class="form-card success">
+      <div class="success-icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#39B54A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>
+      </div>
+      <p class="success-title display">Заявка отправлена!</p>
+      <p class="success-text">{{ flashes[0][1] }}</p>
+      <a href="#apply" class="link-underline" data-reset-form>Отправить ещё одну заявку</a>
+    </div>
+    {% endif %}
+
+    <form class="form-card" method="post" action="{{ url_for('apply') }}#apply" novalidate
+          {% if sent %}hidden{% endif %}>
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <div class="form-grid">
+        <label>
+          <span>ФИО</span>
+          <input name="full_name" value="{{ form.full_name or '' }}" placeholder="Иванов Иван Иванович" autocomplete="name" required>
+          {% if errors.full_name %}<small class="error">{{ errors.full_name }}</small>{% endif %}
+        </label>
+        <label>
+          <span>Телефон</span>
+          <input name="phone" value="{{ form.phone or '' }}" placeholder="+7 914 000-00-00" autocomplete="tel" inputmode="tel" required>
+          {% if errors.phone %}<small class="error">{{ errors.phone }}</small>{% endif %}
+        </label>
+        <label class="full">
+          <span>Электронная почта</span>
+          <input name="email" type="email" value="{{ form.email or '' }}" placeholder="you@example.com" autocomplete="email" required>
+          {% if errors.email %}<small class="error">{{ errors.email }}</small>{% endif %}
+        </label>
+        <label class="full">
+          <span>Описание проекта</span>
+          <textarea name="description" rows="5" placeholder="Расскажите кратко: какую проблему решает проект, кто в команде, на какой стадии идея" required>{{ form.description or '' }}</textarea>
+          {% if errors.description %}<small class="error">{{ errors.description }}</small>{% endif %}
+        </label>
+      </div>
+      <button type="submit" class="btn btn-dark">Отправить заявку
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>
+      </button>
+      <p class="consent">Отправляя заявку, вы соглашаетесь на обработку персональных данных для связи по вопросам резидентства.</p>
+    </form>
+  </div>
+</section>
+
+<!-- Контакты -->
+<section id="contacts" class="section">
+  <div class="container grid-2 contacts">
+    <div>
+      <h2 class="display section-title"><span class="green-text">Есть вопросы?</span> <span class="blue-text">Свяжитесь с нами</span></h2>
+      <p class="muted">Пишите или приходите: мы находимся в ИТ-парке на втором этаже.</p>
+      <dl class="contact-list">
+        <div><dt>Почта центра:</dt><dd><a href="mailto:a.k.lazareva@svfu.ru">a.k.lazareva@svfu.ru</a></dd></div>
+        <div><dt>Общая почта:</dt><dd><a href="mailto:sbioreh@gmail.com">sbioreh@gmail.com</a></dd></div>
+        <div><dt>ВКонтакте:</dt><dd><a href="https://vk.com/orehsvfu" target="_blank" rel="noopener">orehsvfu</a></dd></div>
+        <div><dt>Instagram:</dt><dd><a href="https://instagram.com/sbioreh" target="_blank" rel="noopener">sbioreh</a></dd></div>
+      </dl>
+    </div>
+    <div class="card address-card">
+      <div class="award-icon small" style="background:rgba(41,171,226,.1)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#29ABE2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.1-6.5-10a6.5 6.5 0 0 1 13 0c0 4.9-6.5 10-6.5 10z"/><circle cx="12" cy="10.5" r="2.5"/></svg>
+      </div>
+      <h3 class="display">Как нас найти</h3>
+      <p class="address">г. Якутск, ИТ-парк,<br>2 этаж, «Точка кипения - Якутск»</p>
+      <p class="muted small-text">Часы работы: будни, 09:00–18:00. Перед визитом лучше написать нам на почту.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

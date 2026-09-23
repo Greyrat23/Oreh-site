@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Центр технологического предпринимательства «Орех» СВФУ{% endblock %}</title>
+  <meta name="description" content="Центр технологического предпринимательства «Орех» СВФУ в Якутске: рабочие места в IT Park Yakutsk, менторы, гранты и путь от идеи до компании. Приём заявок круглогодично.">
+  <meta property="og:title" content="Центр технологического предпринимательства «Орех»">
+  <meta property="og:description" content="Развиваем технологическое предпринимательство в Якутии. Приём заявок в резиденты круглогодично.">
+  <meta property="og:image" content="{{ url_for('static', filename='img/itpark-deck.png', _external=True) }}">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/oreh-logo.png') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="#top" class="brand">
+        <img src="{{ url_for('static', filename='img/oreh-logo.png') }}" alt="Логотип «Орех»" width="40" height="40">
+        <span>Орех</span>
+      </a>
+      <nav class="nav-desktop" aria-label="Разделы сайта">
+        <a href="#about">О нас</a>
+        <a href="#benefits">Услуги</a>
+        <a href="#residents">Резиденты</a>
+        <a href="#location">Локация</a>
+        <a href="#steps">Как стать резидентом</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a href="#apply" class="btn btn-primary btn-small">Подать заявку</a>
+    </div>
+    <nav class="nav-mobile" aria-label="Разделы сайта">
+      <a href="#about">О нас</a>
+      <a href="#benefits">Услуги</a>
+      <a href="#residents">Резиденты</a>
+      <a href="#location">Локация</a>
+      <a href="#steps">Как стать резидентом</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div class="footer-brand">
+        <img src="{{ url_for('static', filename='img/oreh-logo.png') }}" alt="" width="36" height="36">
+        <img src="{{ url_for('static', filename='img/svfu-logo.png') }}" alt="" width="36" height="36" class="footer-svfu">
+        <span>Центр технологического предпринимательства «Орех» · АИЦ СВФУ</span>
+      </div>
+      <p>© {{ current_year }} ЦТП «Орех», Якутск</p>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</body>
+</html>
